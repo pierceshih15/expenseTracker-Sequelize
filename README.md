@@ -4,7 +4,7 @@
 
 ## 專案畫面
 
-![image](https://github.com/pierceshih15/expenseTracker-Sequelize/blob/master/public/img/demoPage.png)
+![image](https://github.com/pierceshih15/expenseTracker-Sequelize-v1/blob/master/public/img/demoPage.png)
 
 ## Features - 產品功能
 
@@ -26,13 +26,13 @@
 1. 打開你的 terminal，Clone 此專案至本機電腦
 
 ```
-git clone https://github.com/pierceshih15/expenseTracker-Sequelize.git
+git clone https://github.com/pierceshih15/expenseTracker-Sequelize-v1.git
 ```
 
 2. 開啟終端機(Terminal)，進入存放此專案的資料夾
 
 ```
-cd expenseTracker-Sequelize
+cd expenseTracker-Sequelize-v1
 ```
 
 3. 安裝 npm 套件
@@ -59,7 +59,7 @@ cd expenseTracker-Sequelize
 若成功執行，Terminal 會顯示如下圖的資訊
 ```
 
-![image](https://github.com/pierceshih15/expenseTracker-Sequelize/blob/master/public/img/migrate.png)
+![image](https://github.com/pierceshih15/expenseTracker-Sequelize-v1/blob/master/public/img/migrate.png)
 
 7. 建立種子檔案
 
@@ -71,7 +71,7 @@ cd expenseTracker-Sequelize
 若成功執行，Terminal 會顯示如下圖的資訊
 ```
 
-![image](https://github.com/pierceshih15/expenseTracker-Sequelize/blob/master/public/img/seeder.png)
+![image](https://github.com/pierceshih15/expenseTracker-Sequelize-v1/blob/master/public/img/seeder.png)
 
 8. 啟動應用程式，執行 app.js 檔案
 
