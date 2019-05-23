@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 
 const db = require('../models');
 const User = db.User;
+const Record = db.Record;
 
 // 註冊頁面
 router.get('/register', (req, res) => {

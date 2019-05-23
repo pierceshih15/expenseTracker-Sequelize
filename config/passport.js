@@ -52,7 +52,9 @@ module.exports = passport => {
         // Step 3：找出或是建立使用者資料，以 email 為判斷資訊
         User
           .findOne({
-            email: profile._json.email,
+            where: {
+              email: profile._json.email,
+            }
           })
           .then(user => {
             // Step 3-1：如果 email 不存在就建立新的使用者
@@ -63,7 +65,7 @@ module.exports = passport => {
               bcrypt.genSalt(10, (err, salt) => {
                 bcrypt.hash(randomPassword, salt, (err, hash) => {
                   // Step 3-1-3：建立使用者資料
-                  var newUser = User({
+                  var newUser = new User({
                     name: profile._json.name,
                     email: profile._json.email,
                     // 暫時密碼

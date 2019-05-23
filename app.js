@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
+const methodOverride = require('method-override');
+const helpers = require('handlebars-helpers')();
 
 const db = require('./models');
 const User = db.User;
@@ -15,6 +17,8 @@ const Record = db.Record;
 const HomeRouter = require('./routers/home');
 const UserRouter = require('./routers/user');
 const AuthRouter = require('./routers/auth');
+const RecordRouter = require('./routers/record');
+const FilterRouter = require('./routers/filter');
 
 if (process.env.NODE_ENV !== 'production') { // 如果不是 production 模式
   require('dotenv').config() // 使用 dotenv 讀取 .env 檔案
@@ -25,9 +29,11 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
+app.use(methodOverride('_method'));
 
 app.use(session({
   secret: 'soajdpjp',
@@ -54,9 +60,13 @@ app.use((req, res, next) => {
 app.use('/', HomeRouter);
 app.use('/users', UserRouter);
 app.use('/auth', AuthRouter);
+app.use('/records', RecordRouter);
+// app.use('/', FilterRouter);
 
 app.listen(port, () => {
-  // 同步資料庫
-  db.sequelize.sync()
+  db.sequelize.sync();
+  // db.sequelize.sync({
+  //   force: true
+  // });
   console.log('Express is running.');
 })
