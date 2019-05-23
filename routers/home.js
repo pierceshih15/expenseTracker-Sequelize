@@ -5,13 +5,15 @@ const categoryList = require("../public/data/categories.json").results;
 const db = require("../models");
 const Record = db.Record;
 const User = db.User;
-const { authenticated } = require("../config/auth");
+const {
+  authenticated
+} = require("../config/auth");
 
 router.get("/", authenticated, (req, res) => {
   const filteredMonth = req.query.filteredMonth ? req.query.filteredMonth : "";
-  const filteredCategory = req.query.filteredCategory
-    ? req.query.filteredCategory
-    : "";
+  const filteredCategory = req.query.filteredCategory ?
+    req.query.filteredCategory :
+    "";
   let filteredCategoryChineseName = categoryList[filteredCategory];
 
   const user = User.findByPk(req.user.id)

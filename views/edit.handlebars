@@ -23,7 +23,7 @@
           <label for="category" class="mr-3">分類*：</label>
           <select class="d-inline-block col-4 custom-select" name="category" id="category" value="{{record.category}}"
             required>
-            <option selected>請選擇類別</option>
+            <option disabled>請選擇類別</option>
             <option value="home" {{#eq record.category "home"}} selected{{/eq}}>家居物業</option>
             <option value="shuttle-van" {{#eq record.category "shuttle-van"}} selected{{/eq}}>交通出行</option>
             <option value="grin-beam" {{#eq record.category "grin-beam"}} selected{{/eq}}>休閒娛樂</option>
