@@ -31,9 +31,8 @@ module.exports = {
         createdAt: new Date(),
         updateAt: new Date(),
       }], {})
-  }
-
-  down: (queryInterface, Sequelize) => {
+  },
+  async down(queryInterface, Sequelize) {
     return queryInterface.bulkDelete(
       'Users',
       [{

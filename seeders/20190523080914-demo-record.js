@@ -14,34 +14,44 @@ module.exports = {
       return queryInterface.bulkInsert(
         'Records',
         [{
-            "name": "午餐",
-            "category": "utensils",
-            "amount": "60",
-            "date": "2019-05-22"
+            name: '午餐',
+            category: '餐飲食品',
+            amount: 60,
+            date: '2019-05-22',
+            createdAt: new Date(),
+            updateAt: new Date(),
           },
           {
-            "name": "晚餐",
-            "category": "utensils",
-            "amount": "60",
-            "date": "2019-05-22"
+            name: '晚餐',
+            category: '餐飲食品',
+            amount: 60,
+            date: '2019-05-22',
+            createdAt: new Date(),
+            updateAt: new Date(),
           },
           {
-            "name": "捷運",
-            "category": "shuttle-van",
-            "amount": "120",
-            "date": "2019-05-21"
+            name: '捷運',
+            category: '交通出行',
+            amount: 30,
+            date: '2019-05-21',
+            createdAt: new Date(),
+            updateAt: new Date(),
           },
           {
-            "name": "電影：驚奇隊長",
-            "category": "grin-beam",
-            "amount": "220",
-            "date": "2019-05-12"
+            name: '看棒球',
+            category: '休閒娛樂',
+            amount: 350,
+            date: '2019-05-12',
+            createdAt: new Date(),
+            updateAt: new Date(),
           },
           {
-            "name": "租金",
-            "category": "home",
-            "amount": "25000",
-            "date": "2019-05-01"
+            name: '租金',
+            category: '家居物業',
+            amount: 10000,
+            date: '2019-05-01',
+            createdAt: new Date(),
+            updateAt: new Date(),
           }
         ], {})
     }
