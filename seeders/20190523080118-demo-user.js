@@ -29,14 +29,14 @@ module.exports = {
         email: 'ming@gmail.com',
         password: hashPassword,
         createdAt: new Date(),
-        updateAt: new Date(),
+        updatedAt: new Date(),
       }], {})
   },
   async down(queryInterface, Sequelize) {
     return queryInterface.bulkDelete(
       'Users',
       [{
-        name: '阿明'
+        email: 'ming@gmail.com',
       }])
   }
 };

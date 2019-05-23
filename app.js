@@ -64,8 +64,6 @@ app.use('/records', RecordRouter);
 // app.use('/', FilterRouter);
 
 app.listen(port, () => {
-  db.sequelize.sync({
-    force: true
-  });
+  db.sequelize.sync();
   console.log('Express is running.');
 })

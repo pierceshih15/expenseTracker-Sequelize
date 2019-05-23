@@ -5,53 +5,59 @@ module.exports = {
     const userId = await queryInterface.rawSelect(
       'Users', {
         where: {
-          name: '阿明'
+          email: 'ming@gmail.com',
         }
       },
       ['id']
     )
+
     if (userId) {
       return queryInterface.bulkInsert(
         'Records',
         [{
             name: '午餐',
-            category: '餐飲食品',
+            category: 'utensils',
             amount: 60,
             date: '2019-05-22',
+            userId: userId,
             createdAt: new Date(),
-            updateAt: new Date(),
+            updatedAt: new Date(),
           },
           {
             name: '晚餐',
-            category: '餐飲食品',
+            category: 'utensils',
             amount: 60,
             date: '2019-05-22',
+            userId: userId,
             createdAt: new Date(),
-            updateAt: new Date(),
+            updatedAt: new Date(),
           },
           {
             name: '捷運',
-            category: '交通出行',
+            category: 'shuttle-van',
             amount: 30,
             date: '2019-05-21',
+            userId: userId,
             createdAt: new Date(),
-            updateAt: new Date(),
+            updatedAt: new Date(),
           },
           {
             name: '看棒球',
-            category: '休閒娛樂',
+            category: 'grin-beam',
             amount: 350,
             date: '2019-05-12',
+            userId: userId,
             createdAt: new Date(),
-            updateAt: new Date(),
+            updatedAt: new Date(),
           },
           {
             name: '租金',
-            category: '家居物業',
+            category: 'home',
             amount: 10000,
             date: '2019-05-01',
+            userId: userId,
             createdAt: new Date(),
-            updateAt: new Date(),
+            updatedAt: new Date(),
           }
         ], {})
     }
@@ -60,7 +66,7 @@ module.exports = {
     const userId = await queryInterface.rawSelect(
       'Users', {
         where: {
-          name: '阿明'
+          email: 'ming@gmail.com',
         }
       },
       ['id']
@@ -69,7 +75,7 @@ module.exports = {
       return queryInterface.bulkInsert(
         'Records',
         [{
-          userId: useId
+          userId: userId
         }, ], {})
     }
   }
